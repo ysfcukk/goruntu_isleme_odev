@@ -47,6 +47,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -56,24 +58,49 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button12 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button16 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button29 = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button17 = new System.Windows.Forms.Button();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button15 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button18 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -116,7 +143,7 @@
             this.button8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button8.Location = new System.Drawing.Point(293, 147);
+            this.button8.Location = new System.Drawing.Point(263, 121);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(195, 39);
@@ -130,7 +157,7 @@
             this.button7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button7.Location = new System.Drawing.Point(448, 104);
+            this.button7.Location = new System.Drawing.Point(418, 78);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(100, 39);
@@ -144,7 +171,7 @@
             this.button6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button6.Location = new System.Drawing.Point(342, 104);
+            this.button6.Location = new System.Drawing.Point(312, 78);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(100, 39);
@@ -158,7 +185,7 @@
             this.button5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button5.Location = new System.Drawing.Point(236, 104);
+            this.button5.Location = new System.Drawing.Point(206, 78);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 39);
@@ -175,7 +202,7 @@
             "5x5",
             "7x7",
             "9x9"});
-            this.comboBox1.Location = new System.Drawing.Point(331, 61);
+            this.comboBox1.Location = new System.Drawing.Point(302, 49);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 9;
@@ -326,13 +353,37 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Odev3";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Pink;
+            this.label5.Location = new System.Drawing.Point(210, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 16);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "pasif";
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button15.Location = new System.Drawing.Point(22, 59);
+            this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(182, 39);
+            this.button15.TabIndex = 63;
+            this.button15.Text = "Nokta Secmeyi Etkinleştir";
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(376, 59);
+            this.label3.Location = new System.Drawing.Point(376, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 159);
+            this.label3.Size = new System.Drawing.Size(327, 200);
             this.label3.TabIndex = 62;
             this.label3.Text = "Kodun düzgün çalışabilmesi için lütfen noktalara şu sırayla tıklayın.\r\n-sol üst\r\n" +
     "-sağ üst\r\n-sağ alt\r\n-sol alt";
@@ -427,6 +478,8 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage5.Controls.Add(this.button16);
+            this.tabPage5.Controls.Add(this.label7);
             this.tabPage5.Controls.Add(this.button14);
             this.tabPage5.Controls.Add(this.label12);
             this.tabPage5.Controls.Add(this.button29);
@@ -436,18 +489,220 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Odev5";
             // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button16.Location = new System.Drawing.Point(257, 33);
+            this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(155, 39);
+            this.button16.TabIndex = 64;
+            this.button16.Text = "Bina Resmi Getir\r\n";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(376, 76);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(327, 154);
+            this.label7.TabIndex = 63;
+            this.label7.Text = "Kodun düzgün çalışabilmesi için lütfen saat yönünde veya saat yönünün tersinde no" +
+    "ktaları seçin (yani sıralı olsun) Ayrıca birbirine yakın çok fazla koymayın.";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button14.Location = new System.Drawing.Point(14, 76);
+            this.button14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(237, 39);
+            this.button14.TabIndex = 23;
+            this.button14.Text = "Arka Planı Blurlaştır";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Pink;
+            this.label12.Location = new System.Drawing.Point(14, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 16);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "pasif";
+            // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button29.Location = new System.Drawing.Point(14, 33);
+            this.button29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(237, 39);
+            this.button29.TabIndex = 21;
+            this.button29.Text = "Nokta Secmeyi Etkinleştir";
+            this.button29.UseVisualStyleBackColor = false;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
+            // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage6.Controls.Add(this.label13);
+            this.tabPage6.Controls.Add(this.groupBox2);
+            this.tabPage6.Controls.Add(this.groupBox1);
+            this.tabPage6.Controls.Add(this.label11);
+            this.tabPage6.Controls.Add(this.numericUpDown3);
+            this.tabPage6.Controls.Add(this.label10);
+            this.tabPage6.Controls.Add(this.numericUpDown2);
+            this.tabPage6.Controls.Add(this.label9);
+            this.tabPage6.Controls.Add(this.numericUpDown1);
+            this.tabPage6.Controls.Add(this.label8);
+            this.tabPage6.Controls.Add(this.button17);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(707, 230);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Odev6";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(265, 101);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 16);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Intensity";
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(326, 99);
+            this.numericUpDown3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(71, 22);
+            this.numericUpDown3.TabIndex = 33;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(280, 73);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 16);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Edge";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(326, 71);
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(71, 22);
+            this.numericUpDown2.TabIndex = 31;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 47);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(56, 20);
+            this.radioButton2.TabIndex = 30;
+            this.radioButton2.Text = "Kare";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 21);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(61, 20);
+            this.radioButton1.TabIndex = 29;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Daire";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(279, 45);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 16);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Boyut";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(326, 43);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(71, 22);
+            this.numericUpDown1.TabIndex = 27;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Pink;
+            this.label8.Location = new System.Drawing.Point(15, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 16);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "pasif";
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button17.Location = new System.Drawing.Point(15, 34);
+            this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(237, 39);
+            this.button17.TabIndex = 23;
+            this.button17.Text = "Mouse Etrafına Blur Aktifleştir";
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage7.Controls.Add(this.label14);
+            this.tabPage7.Controls.Add(this.comboBox2);
+            this.tabPage7.Controls.Add(this.button18);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(707, 230);
@@ -486,68 +741,104 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
-            // label12
+            // groupBox1
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Pink;
-            this.label12.Location = new System.Drawing.Point(14, 15);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 16);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "pasif";
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Location = new System.Drawing.Point(419, 36);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(72, 85);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sekil";
             // 
-            // button29
+            // groupBox2
             // 
-            this.button29.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button29.Location = new System.Drawing.Point(14, 33);
-            this.button29.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(237, 39);
-            this.button29.TabIndex = 21;
-            this.button29.Text = "Nokta Secmeyi Etkinleştir";
-            this.button29.UseVisualStyleBackColor = false;
-            this.button29.Click += new System.EventHandler(this.button29_Click);
+            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.Controls.Add(this.radioButton4);
+            this.groupBox2.Location = new System.Drawing.Point(507, 36);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(92, 85);
+            this.groupBox2.TabIndex = 36;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Blur";
             // 
-            // button14
+            // radioButton3
             // 
-            this.button14.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button14.Location = new System.Drawing.Point(14, 76);
-            this.button14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(237, 39);
-            this.button14.TabIndex = 23;
-            this.button14.Text = "Arka Planı Blurlaştır";
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 21);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(62, 20);
+            this.radioButton3.TabIndex = 29;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Mean";
+            this.radioButton3.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // radioButton4
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Pink;
-            this.label5.Location = new System.Drawing.Point(210, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 16);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "pasif";
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(6, 47);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(77, 20);
+            this.radioButton4.TabIndex = 30;
+            this.radioButton4.Text = "Medyan";
+            this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // label13
             // 
-            this.button15.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button15.Location = new System.Drawing.Point(22, 59);
-            this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(182, 39);
-            this.button15.TabIndex = 63;
-            this.button15.Text = "Nokta Secmeyi Etkinleştir";
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.Location = new System.Drawing.Point(4, 124);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(595, 92);
+            this.label13.TabIndex = 64;
+            this.label13.Text = "Program ilk başta biraz yavaş çalışıyor. Birkaç saniye beklerseniz düzgün çalışac" +
+    "aktır.\r\nNot: Gauss algoritması programı aşırı yavaşlattığı için seçeneklerden çı" +
+    "kartılmıştır.";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // button18
+            // 
+            this.button18.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button18.Location = new System.Drawing.Point(30, 30);
+            this.button18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(128, 39);
+            this.button18.TabIndex = 24;
+            this.button18.Text = "Bulanıklaştır";
+            this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "3x3",
+            "5x5",
+            "7x7",
+            "9x9"});
+            this.comboBox2.Location = new System.Drawing.Point(164, 38);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(87, 24);
+            this.comboBox2.TabIndex = 25;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Location = new System.Drawing.Point(26, 106);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(677, 92);
+            this.label14.TabIndex = 65;
+            this.label14.Text = "Komşular arasıdan en çok tekrar eden rengi alarak bulanıklaştırma işlemi bence re" +
+    "sme elle çizilmiş havası katıyor. Izgara tarzı çizgili olan resimlerde saçma çal" +
+    "ışıyor";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // hafta5
             // 
@@ -572,8 +863,18 @@
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -618,5 +919,25 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label14;
     }
 }

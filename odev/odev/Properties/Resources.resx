@@ -124,6 +124,9 @@
   <data name="billboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\billboard.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="billboard2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\billboard21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="marylyn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\marylyn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,7 +145,7 @@
   <data name="eski" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eski2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="billboard2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\billboard21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="building" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\building1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

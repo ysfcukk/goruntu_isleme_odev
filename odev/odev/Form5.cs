@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Skins;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,8 @@ namespace odev
         private void hafta5_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+
         }
 
         private int comboBoxDeger(int index)
@@ -691,27 +694,41 @@ namespace odev
 
             int h = ResimYuksekligi;
 
+            double deger1;
+            double deger2;
+            int t1;
+            int t2;
+            int len = k.Count();
+
             for (x = (SablonBoyutu - 1) / 2; x < ResimGenisligi - (SablonBoyutu - 1) / 2; x++)
             {
                 for (y = (SablonBoyutu - 1) / 2; y < ResimYuksekligi - (SablonBoyutu - 1) / 2; y++)
                 {
                     bool kosul = true;
-                    double deger;
-                    for (int p = 0; p < k.Count(); p++)
+
+                    for (int p = 0; p < len; p++)
                     {
-                        deger = k[p][0] * x + k[p][1] * (h - y) + k[p][2];
-                        if (k[p][0] > 0)
+
+                        t1 = p - 1;
+                        t2 = p + 2;
+
+                        if (p >= (len - 2)) t2 = (p + 2) % len;
+                        else if (p == 0) t1 = len - 1;
+
+                        deger1 = k[p][0] * sekilNoktalar[t1].X + k[p][1] * (h - sekilNoktalar[t1].Y) + k[p][2];
+                        deger2 = k[p][0] * sekilNoktalar[t2].X + k[p][1] * (h - sekilNoktalar[t2].Y) + k[p][2];
+
+                        if (deger1 > 0 && deger2 > 0)
                         {
-                            if (deger > 0)
+                            if ((k[p][0] * x + k[p][1] * (h - y) + k[p][2]) < 0)
                             {
                                 kosul = false;
                                 break;
                             }
-
                         }
-                        else
+                        else if (deger1 < 0 && deger2 < 0)
                         {
-                            if (deger < 0)
+                            if ((k[p][0] * x + k[p][1] * (h - y) + k[p][2]) > 0)
                             {
                                 kosul = false;
                                 break;
@@ -752,7 +769,6 @@ namespace odev
 
         private void button14_Click(object sender, EventArgs e)
         {
-            MessageBox.Show((false || false).ToString());
 
             Bitmap resim = new Bitmap(yedekResim);
 
@@ -824,6 +840,444 @@ namespace odev
                 noktaCizimi = false;
                 pictureBox1.Image = yedekResim;
             }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.building;
+        }
+
+        bool mouseBlur = false;
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (!mouseBlur)
+            {
+                label8.BackColor = Color.FromArgb(192, 255, 192);
+                label8.Text = "aktif";
+                mouseBlur = true;
+                yedekResim = new Bitmap(pictureBox1.Image);
+            }
+            else
+            {
+                label8.BackColor = Color.Pink;
+                label8.Text = "pasif";
+                mouseBlur = false;
+                pictureBox1.Image = yedekResim;
+            }
+        }
+
+        bool ilkBlurMean = true;
+
+        Bitmap mean5 = null;
+        Bitmap mean7 = null;
+        Bitmap mean9 = null;
+        Bitmap mean11 = null;
+        Bitmap mean13 = null;
+        Bitmap meanGecici = null;
+        Bitmap medyan5 = null;
+        Bitmap medyan7 = null;
+        Bitmap medyan9 = null;
+        Bitmap medyan11 = null;
+        Bitmap medyan13 = null;
+        Bitmap medyanGecici = null;
+        private Bitmap MouseEtrafinaBlurUygula(Bitmap resim, string blurTuru, Point nokta, int boyut, int kenar, int yogunluk, string sekil)
+        {
+            int x0 = nokta.X;
+            int y0 = nokta.Y;
+
+            int w = resim.Width;
+            int h = resim.Height;
+
+            Color OkunanRenk;
+            Bitmap CikisResmi;
+            int ResimGenisligi = resim.Width;
+            int ResimYuksekligi = resim.Height;
+            CikisResmi = new Bitmap(ResimGenisligi, ResimYuksekligi);
+
+            int kk;
+
+
+            if (yogunluk <= 20)
+            {
+                kk = 5;
+                if (blurTuru == "mean")
+                {
+                    if (mean5 == null)
+                        mean5 = Mean(resim, 5);
+                    meanGecici = mean5;
+                }
+                else
+                {
+                    if (medyan5 == null)
+                        medyan5 = Mean(resim, 5);
+                    medyanGecici = medyan5;
+                }
+
+
+            }
+            else if (yogunluk <= 40)
+            {
+                kk = 7;
+                if (blurTuru == "mean")
+                {
+                    if (mean7 == null)
+                        mean7 = Mean(resim, 7);
+                    meanGecici = mean7;
+                }
+                else
+                {
+                    if (medyan7 == null)
+                        medyan7 = Mean(resim, 7);
+                    medyanGecici = medyan7;
+                }
+            }
+            else if (yogunluk <= 60)
+            {
+                kk = 9;
+                if (blurTuru == "mean")
+                {
+                    if (mean9 == null)
+                        mean9 = Mean(resim, 9);
+                    meanGecici = mean7;
+                }
+                else
+                {
+                    if (medyan9 == null)
+                        medyan9 = Mean(resim, 9);
+                    medyanGecici = medyan9;
+                }
+            }
+            else if (yogunluk <= 80)
+            {
+                kk = 11;
+                if (blurTuru == "mean")
+                {
+                    if (mean11 == null)
+                        mean11 = Mean(resim, 11);
+                    meanGecici = mean11;
+                }
+                else
+                {
+                    if (medyan11 == null)
+                        medyan11 = Mean(resim, 11);
+                    medyanGecici = medyan11;
+                }
+            }
+            else
+            {
+                kk = 13;
+                if (blurTuru == "mean")
+                {
+                    if (mean13 == null)
+                        mean13 = Mean(resim, 13);
+                    meanGecici = mean13;
+                }
+                else
+                {
+                    if (medyan13 == null)
+                        medyan13 = Mean(resim, 13);
+                    medyanGecici = medyan13;
+                }
+            }
+
+            int SablonBoyutu = kk;
+
+            bool kontrol;
+            //double kontrol = Math.Sqrt(Math.Pow((i - (x0)), 2) + Math.Pow((j - (y0)), 2));
+            //if (kontrol < boyut) //renk = //MouseEtrafinaBlurUygula(i, j, resim.GetPixel(i, j));
+            //                else renk = Color.FromArgb(0, 0, 0, 0);
+
+            if (blurTuru == "mean")
+            {
+                int x, y, i, j;
+
+                for (x = (SablonBoyutu - 1) / 2; x < ResimGenisligi - (SablonBoyutu - 1) / 2; x++)
+                {
+                    for (y = (SablonBoyutu - 1) / 2; y < ResimYuksekligi - (SablonBoyutu - 1) / 2; y++)
+                    {
+                        if (sekil == "daire")
+                        {
+                            double hesap = Math.Sqrt(Math.Pow(x - x0, 2) + Math.Pow(y - y0, 2));
+                            kontrol = hesap < boyut;
+
+                            double d = 150.0 / kenar;
+                            double hesap2 = (boyut / d);
+                            double v = boyut - hesap2;
+                            if (kk == 7)
+                            {
+                                if (hesap > v + hesap2)
+                                {
+                                    if (mean5 == null) mean5 = Mean(resim, 5);
+                                    meanGecici = mean5;
+                                }
+                                else
+                                {
+                                    if (mean7 == null) mean7 = Mean(resim, 7);
+                                    meanGecici = mean7;
+                                }
+                            }
+                            else if (kk == 9)
+                            {
+                                if (hesap > v + hesap2)
+                                {
+                                    if (mean5 == null) mean5 = Mean(resim, 5);
+                                    meanGecici = mean5;
+                                }
+                                else if (hesap > v + (hesap2 / 2))
+                                {
+                                    if (mean7 == null) mean7 = Mean(resim, 7);
+                                    meanGecici = mean7;
+                                }
+                                else
+                                {
+                                    if (mean9 == null) mean9 = Mean(resim, 9);
+                                    meanGecici = mean9;
+                                }
+                            }
+                            else if (kk == 11)
+                            {
+                                if (hesap > v + 3 * (hesap2 / 3)) { if (mean5 == null) mean5 = Mean(resim, 5); meanGecici = mean5; }
+                                else if (hesap > v + 2 * (hesap2 / 3)) { if (mean7 == null) mean7 = Mean(resim, 7); meanGecici = mean7; }
+                                else if (hesap > v + (hesap2 / 3)) { if (mean9 == null) mean9 = Mean(resim, 9); meanGecici = mean9; }
+                                else { if (mean11 == null) mean11 = Mean(resim, 11); meanGecici = mean11; }
+                            }
+                            else if (kk == 13)
+                            {
+                                if (hesap > v + hesap2) { if (mean5 == null) mean5 = Mean(resim, 5); meanGecici = mean5; }
+                                else if (hesap > v + 3 * (hesap2 / 4)) { if (mean7 == null) mean7 = Mean(resim, 7); meanGecici = mean7; }
+                                else if (hesap > v + 2 * (hesap2 / 4)) { if (mean9 == null) mean9 = Mean(resim, 9); meanGecici = mean9; }
+                                else if (hesap > v + (hesap2 / 4)) { if (mean11 == null) mean11 = Mean(resim, 11); meanGecici = mean11; }
+                                else { if (mean13 == null) mean13 = Mean(resim, 13); meanGecici = mean13; }
+                            }
+
+                        }
+                        else
+                        {
+                            kontrol = x > (x0 - (boyut / 2)) && x < (x0 + (boyut / 2)) && y > (y0 - (boyut / 2)) && y < (y0 + (boyut / 2));
+                            if (kk == 5) { if (mean5 == null) mean5 = Mean(resim, 5); meanGecici = mean5; }
+                            else if (kk == 7) { if (mean7 == null) mean7 = Mean(resim, 7); meanGecici = mean7; }
+                            else if (kk == 9) { if (mean9 == null) mean9 = Mean(resim, 9); meanGecici = mean9; }
+                            else if (kk == 11) { if (mean11 == null) mean11 = Mean(resim, 11); meanGecici = mean11; }
+                            else if (kk == 13) { if (mean13 == null) mean13 = Mean(resim, 13); meanGecici = mean13; }
+                        }
+
+                        if (kontrol)
+                        {
+                            CikisResmi.SetPixel(x, y, meanGecici.GetPixel(x, y));
+                        }
+                        else
+                        {
+                            CikisResmi.SetPixel(x, y, resim.GetPixel(x, y));
+                        }
+                    }
+                }
+            }
+
+            if (blurTuru == "medyan")
+            {
+                int x, y, i, j;
+                for (x = (SablonBoyutu - 1) / 2; x < ResimGenisligi - (SablonBoyutu - 1) / 2; x++)
+                {
+                    for (y = (SablonBoyutu - 1) / 2; y < ResimYuksekligi - (SablonBoyutu - 1) / 2; y++)
+                    {
+                        if (sekil == "daire")
+                        {
+                            double hesap = Math.Sqrt(Math.Pow(x - x0, 2) + Math.Pow(y - y0, 2));
+                            kontrol = hesap < boyut;
+
+                            double d = 150.0 / kenar;
+                            double hesap2 = (boyut / d);
+                            double v = boyut - hesap2;
+                            if (kk == 7)
+                            {
+                                if (hesap > v + hesap2)
+                                {
+                                    if (medyan5 == null) medyan5 = Medyan(resim, 5);
+                                    medyanGecici = medyan5;
+                                }
+                                else
+                                {
+                                    if (medyan7 == null) medyan7 = Medyan(resim, 7);
+                                    medyanGecici = medyan7;
+                                }
+                            }
+                            else if (kk == 9)
+                            {
+                                if (hesap > v + hesap2)
+                                {
+                                    if (medyan5 == null) medyan5 = Medyan(resim, 5);
+                                    medyanGecici = medyan5;
+                                }
+                                else if (hesap > v + (hesap2 / 2))
+                                {
+                                    if (medyan7 == null) medyan7 = Medyan(resim, 7);
+                                    medyanGecici = medyan7;
+                                }
+                                else
+                                {
+                                    if (medyan9 == null) medyan9 = Medyan(resim, 9);
+                                    medyanGecici = medyan9;
+                                }
+                            }
+                            else if (kk == 11)
+                            {
+                                if (hesap > v + 3 * (hesap2 / 3)) { if (medyan5 == null) medyan5 = Medyan(resim, 5); medyanGecici = medyan5; }
+                                else if (hesap > v + 2 * (hesap2 / 3)) { if (medyan7 == null) medyan7 = Medyan(resim, 7); medyanGecici = medyan7; }
+                                else if (hesap > v + (hesap2 / 3)) { if (medyan9 == null) medyan9 = Medyan(resim, 9); medyanGecici = medyan9; }
+                                else { if (medyan11 == null) medyan11 = Medyan(resim, 11); medyanGecici = medyan11; }
+                            }
+                            else if (kk == 13)
+                            {
+                                if (hesap > v + hesap2) { if (medyan5 == null) medyan5 = Medyan(resim, 5); medyanGecici = medyan5; }
+                                else if (hesap > v + 3 * (hesap2 / 4)) { if (medyan7 == null) medyan7 = Medyan(resim, 7); medyanGecici = medyan7; }
+                                else if (hesap > v + 2 * (hesap2 / 4)) { if (medyan9 == null) medyan9 = Medyan(resim, 9); medyanGecici = medyan9; }
+                                else if (hesap > v + (hesap2 / 4)) { if (medyan11 == null) medyan11 = Medyan(resim, 11); medyanGecici = medyan11; }
+                                else { if (medyan13 == null) medyan13 = Medyan(resim, 13); medyanGecici = medyan13; }
+                            }
+
+                        }
+                        else
+                        {
+                            kontrol = x > (x0 - (boyut / 2)) && x < (x0 + (boyut / 2)) && y > (y0 - (boyut / 2)) && y < (y0 + (boyut / 2));
+                            if (kk == 5) { if (medyan5 == null) medyan5 = Medyan(resim, 5); medyanGecici = medyan5; }
+                            else if (kk == 7) { if (medyan7 == null) medyan7 = Medyan(resim, 7); medyanGecici = medyan7; }
+                            else if (kk == 9) { if (medyan9 == null) medyan9 = Medyan(resim, 9); medyanGecici = medyan9; }
+                            else if (kk == 11) { if (medyan11 == null) medyan11 = Medyan(resim, 11); medyanGecici = medyan11; }
+                            else if (kk == 13) { if (medyan13 == null) medyan13 = Medyan(resim, 13); medyanGecici = medyan13; }
+                        }
+
+
+                        if (kontrol)
+                        {
+                            CikisResmi.SetPixel(x, y, medyanGecici.GetPixel(x, y));
+                        }
+                        else
+                        {
+                            CikisResmi.SetPixel(x, y, resim.GetPixel(x, y));
+                        }
+                    }
+                }
+            }
+            return CikisResmi;
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            MouseEventArgs me = (MouseEventArgs)e;
+            Point nokta = me.Location;
+
+            Point yeniNokta = Oranla(pictureBox1, nokta.X, nokta.Y);
+
+            int x0 = yeniNokta.X;
+            int y0 = yeniNokta.Y;
+
+            if (mouseBlur)
+            {
+                int boyut = Convert.ToInt16(numericUpDown1.Value);
+                int kenar = Convert.ToInt16(numericUpDown2.Value);
+                int yogunluk = Convert.ToInt16(numericUpDown3.Value);
+
+                string sekil = "daire";
+                string blur = "mean";
+
+                if (radioButton1.Checked == true) { sekil = "daire"; boyut /= 2; }
+                else if (radioButton2.Checked == true) sekil = "kare";
+
+                if (radioButton3.Checked == true) blur = "mean";
+                else if (radioButton4.Checked == true) blur = "medyan";
+
+                Bitmap resim = new Bitmap(yedekResim);
+
+                //for (int i = 0; i < resim.Width; i++)
+                //{
+                //    for (int j = 0; j < resim.Height; j++)
+                //    {
+                //        Color renk;
+                //        bool kontrol = i > (x0 - (boyut / 2)) && i < (x0 + (boyut / 2)) && j > (y0 - (boyut / 2)) && j < (y0 + (boyut / 2));
+                //        if (kontrol) renk = Color.FromArgb(255, 255, 255);
+                //        else renk = Color.FromArgb(0, 0, 0);
+                //        resim.SetPixel(i, j, renk);
+                //    }
+                //}
+                //pictureBox1.Image = resim;
+
+                pictureBox1.Image = MouseEtrafinaBlurUygula(resim, blur, yeniNokta, boyut, kenar, yogunluk, sekil);
+
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            int l = comboBoxDeger(comboBox2.SelectedIndex);
+
+            Color OkunanRenk;
+            Bitmap CikisResmi;
+            Bitmap GirisResmi = new Bitmap(pictureBox1.Image);
+            int ResimGenisligi = GirisResmi.Width;
+            int ResimYuksekligi = GirisResmi.Height;
+            CikisResmi = new Bitmap(ResimGenisligi, ResimYuksekligi);
+            int SablonBoyutu = 0;
+            try
+            {
+                SablonBoyutu = l;
+            }
+            catch
+            {
+                SablonBoyutu = 3;
+            }
+            int ElemanSayisi = SablonBoyutu * SablonBoyutu;
+            int[] R = new int[ElemanSayisi];
+            int[] G = new int[ElemanSayisi];
+            int[] B = new int[ElemanSayisi];
+            int[] Gri = new int[ElemanSayisi];
+
+            int x, y, i, j;
+            for (x = (SablonBoyutu - 1) / 2; x < ResimGenisligi - (SablonBoyutu - 1) / 2; x++)
+            {
+                for (y = (SablonBoyutu - 1) / 2; y < ResimYuksekligi - (SablonBoyutu - 1) / 2; y++)
+                {
+                    int k = 0;
+                    for (i = -((SablonBoyutu - 1) / 2); i <= (SablonBoyutu - 1) / 2; i++)
+                    {
+                        for (j = -((SablonBoyutu - 1) / 2); j <= (SablonBoyutu - 1) / 2; j++)
+                        {
+                            OkunanRenk = GirisResmi.GetPixel(x + i, y + j);
+                            R[k] = OkunanRenk.R;
+                            G[k] = OkunanRenk.G;
+                            B[k] = OkunanRenk.B;
+                            Gri[k] = Convert.ToInt16(R[k] * 0.299 + G[k] * 0.587 + B[k] * 0.114); //Gri ton formülü
+                            k++;
+                        }
+                    }
+                    int indeks = ModIndexi(Gri);
+                    CikisResmi.SetPixel(x, y, Color.FromArgb(R[indeks], G[indeks], B[indeks]));
+                }
+            }
+            pictureBox2.Image = CikisResmi;
+        }
+        static int ModIndexi(int[] numbers)
+        {
+            // Dizideki öğelerin frekanslarını bulma
+            Dictionary<int, int> frequency = new Dictionary<int, int>();
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                int number = numbers[i];
+                if (frequency.ContainsKey(number))
+                {
+                    frequency[number]++;
+                }
+                else
+                {
+                    frequency[number] = 1;
+                }
+            }
+
+            // En yüksek frekansa sahip öğenin indeksini bulma
+            int mode = frequency.OrderByDescending(x => x.Value).First().Key;
+            int modeIndex = Array.IndexOf(numbers, mode);
+
+            return modeIndex;
         }
     }
 }
