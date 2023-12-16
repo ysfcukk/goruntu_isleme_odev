@@ -68,3 +68,4 @@ C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\obj\Debug\odev.csproj.CopyComplete
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\obj\Debug\odev.exe
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\obj\Debug\odev.pdb
+C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\obj\Debug\odev.hafta6.resources

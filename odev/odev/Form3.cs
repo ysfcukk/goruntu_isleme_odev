@@ -482,7 +482,7 @@ namespace odev
             }
 
             if (x0 < 0) x0 = 0;
-            if (yy < 0) yy = 0;
+            if (y0 < 0) y0 = 0;
 
             return new Point(x0, y0);
         }
@@ -518,12 +518,35 @@ namespace odev
                     }
                     else
                     {
+                        if (x > kirpmaIlkNokta.X && y > kirpmaIlkNokta.X)
+                        {
+                            kirpmaSonNokta.X = x;
+                            kirpmaSonNokta.Y = y;
+                        }
+                        else if (x > kirpmaIlkNokta.X && y < kirpmaIlkNokta.Y)
+                        {
+                            kirpmaSonNokta.X = x;
+                            kirpmaSonNokta.Y = kirpmaIlkNokta.Y;
+                            kirpmaIlkNokta.Y = y;
+                        }
+                        else if (x < kirpmaIlkNokta.X && y < kirpmaIlkNokta.Y)
+                        {
+                            kirpmaSonNokta = kirpmaIlkNokta;
+
+                            kirpmaIlkNokta.X = x;
+                            kirpmaIlkNokta.Y = y;
+                        }
+                        else
+                        {   
+                            kirpmaSonNokta.Y = y;
+                            kirpmaSonNokta.X = kirpmaIlkNokta.X;
+                            kirpmaIlkNokta.X = x;
+                        }
+
                         pictureBox1.Image = NoktaCiz(new Bitmap(pictureBox1.Image), x - 2, y - 2);
 
-                        kirpmaSonNokta = new Point(x, y);
-
                         Bitmap resim = new Bitmap(pictureBox1.Image);
-                        pictureBox1.Image = DikdortgenCiz(resim, kirpmaIlkNokta.X, kirpmaIlkNokta.Y, Math.Abs(kirpmaIlkNokta.X - x), Math.Abs(kirpmaIlkNokta.Y - y));
+                        pictureBox1.Image = DikdortgenCiz(resim, kirpmaIlkNokta.X, kirpmaIlkNokta.Y, Math.Abs(kirpmaIlkNokta.X - kirpmaSonNokta.X), Math.Abs(kirpmaIlkNokta.Y - kirpmaSonNokta.Y));
                         kirpmaTiklama = false;
                         ikinciTiklandi = true;
                     }

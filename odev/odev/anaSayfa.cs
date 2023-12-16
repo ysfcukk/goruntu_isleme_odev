@@ -56,5 +56,13 @@ namespace odev
             hafta5.ShowDialog();
             this.Close();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            hafta6 hafta6 = new hafta6();
+            this.Hide();
+            hafta6.ShowDialog();
+            this.Close();
+        }
     }
 }
