@@ -36,13 +36,6 @@ C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\odev.exe.config
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\odev.exe
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\odev.pdb
-C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.Data.Desktop.v23.1.dll
-C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.Data.v23.1.dll
-C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.Drawing.v23.1.dll
-C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.Printing.v23.1.Core.dll
-C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.Sparkline.v23.1.Core.dll
-C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.Utils.v23.1.dll
-C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.XtraEditors.v23.1.dll
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.Pdf.v23.1.Core.dll
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.Pdf.v23.1.Drawing.dll
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\bin\Debug\DevExpress.Data.Desktop.v23.1.xml
@@ -69,3 +62,5 @@ C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\obj\Debug\odev.exe
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\obj\Debug\odev.pdb
 C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\obj\Debug\odev.hafta6.resources
+C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\obj\Debug\odev.hafta7.resources
+C:\Users\yusuf\Desktop\Dersler\7_(2023-2024) 4.Sınıf GÜZ\Görüntü İşleme\goruntu_isleme_odev\odev\odev\obj\Debug\odev.hafta8.resources

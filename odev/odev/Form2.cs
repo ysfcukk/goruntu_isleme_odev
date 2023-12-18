@@ -1,5 +1,4 @@
-﻿using DevExpress.Data.Linq.Helpers;
-using DevExpress.XtraExport.Helpers;
+﻿
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +12,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Media3D;
-using static DevExpress.Skins.SolidColorHelper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace odev
@@ -35,7 +33,7 @@ namespace odev
             InitializeComponent();
         }
 
-        static Bitmap GriyeDonustur(Bitmap girisResmi)
+        private Bitmap GriyeDonustur(Bitmap girisResmi)
         {
             int r, g, b;
 

@@ -851,7 +851,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "hafta5";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form5";
+            this.Text = "hafta5";
             this.Load += new System.EventHandler(this.hafta5_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
