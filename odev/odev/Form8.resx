@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Not: Bu algoritma bu resim için çalışmaktadır. Çünkü paraların çevreleri oranlanarak değil piksel sayısına göre hesaplanmıştır. Oranlayarak yapmak daha sağlıklı olacaktır fakat üşendim :) Ayrıca yazı tura olayını denedim fakat beceremedim.</value>
+  </data>
 </root>

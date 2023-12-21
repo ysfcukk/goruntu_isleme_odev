@@ -80,5 +80,21 @@ namespace odev
             hafta8.ShowDialog();
             this.Show();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            hafta9 hafta9 = new hafta9();
+            this.Hide();
+            hafta9.ShowDialog();
+            this.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            hafta10 hafta10 = new hafta10();
+            this.Hide();
+            hafta10.ShowDialog();
+            this.Show();
+        }
     }
 }

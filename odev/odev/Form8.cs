@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -110,14 +111,23 @@ namespace odev
                 RenkDizisi[j] = TekrarsizEtiketNumaralari[j]; //sıradaki ilk renge, ait olacağı etiketin kaç numara olacağını atıyor.
             }
             int RenkSayisi = RenkDizisi.Length; //kaç tane numara varsa o kadar renk var demektir.
-            Color[] Renkler = new Color[RenkSayisi]; Random Rastgele = new Random();
-            int Kirmizi, Yesil, Mavi;
+            List<Color> Renkler = new List<Color>();
+            Random Rastgele = new Random();
+            int Kirmizi=0, Yesil=0, Mavi=0;
             for (int r = 0; r < RenkSayisi; r++) //sonraki renkler.
             {
-                Kirmizi = Rastgele.Next(15, 25) * 10; //Açık renkler elde etmek ve 10 katları şeklinde olmasını sağlıyor. yani 150-250 arasındaki sayıları atıyor.
-                Yesil = Rastgele.Next(15, 25) * 10;
-                Mavi = Rastgele.Next(15, 25) * 10;
-                Renkler[r] = Color.FromArgb(Kirmizi, Yesil, Mavi); //Renkler dizisi Color tipinde renkleri tutan bir dizidir.
+                bool kontrol=true;
+
+                while (kontrol) {
+                    Kirmizi = Rastgele.Next(17, 25) * 10; //Açık renkler elde etmek ve 10 katları şeklinde olmasını sağlıyor. yani 150-250 arasındaki sayıları atıyor.
+                    Yesil = Rastgele.Next(17, 25) * 10;
+                    Mavi = Rastgele.Next(17, 25) * 10;
+
+                    if (Renkler.Contains(Color.FromArgb(Kirmizi, Yesil, Mavi))) kontrol = true;
+                    else kontrol = false;
+                }
+
+                Renkler.Add(Color.FromArgb(Kirmizi, Yesil, Mavi)); //Renkler dizisi Color tipinde renkleri tutan bir dizidir.
             }
 
             for (x = 1; x < ResimGenisligi - 1; x++)
@@ -467,7 +477,7 @@ namespace odev
                 }
             }
 
-            Bitmap cikisResmi = new Bitmap(manzara.Width,manzara.Height);
+            Bitmap cikisResmi = new Bitmap(manzara.Width, manzara.Height);
             Color sinirRenk = renkSayac.OrderByDescending(kv => kv.Value).First().Key; //en çok geçen renk (yani sınırlar.)
 
             for (int x = 0; x < w; x++)
@@ -476,7 +486,7 @@ namespace odev
                 {
                     okunanRenk = resim.GetPixel(x, y);
 
-                    if (okunanRenk == Color.FromArgb(255,255,255))
+                    if (okunanRenk == Color.FromArgb(255, 255, 255))
                     {
                         cikisResmi.SetPixel(x, y, manzara.GetPixel(x, y));
                     }
@@ -493,6 +503,212 @@ namespace odev
         private void button9_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = Properties.Resources.view2;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.noisy;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Bitmap resim = new Bitmap(pictureBox1.Image);
+            pictureBox2.Image = NoisyYokEt(resim, true);
+        }
+
+        private Bitmap NoisyYokEt(Bitmap GirisResmi, bool dokuz)
+        {
+            Color OkunanRenk;
+            Bitmap CikisResmi;
+
+            int ResimGenisligi = GirisResmi.Width;
+            int ResimYuksekligi = GirisResmi.Height;
+
+            CikisResmi = new Bitmap(ResimGenisligi, ResimYuksekligi);
+
+            Color[] renkler5 = new Color[4];
+            int x, y, i, j;
+
+            int r, g, b;
+            int tr, tg, tb;
+
+            int esik = 50;
+
+            for (x = 0; x < ResimGenisligi; x++)
+            {
+                for (y = 0; y < ResimYuksekligi; y++)
+                {
+                    r = 0; g = 0; b = 0;
+                    tr = 0; tg = 0; tb = 0;
+                    if (dokuz)
+                    {
+                        List<Color> renkler9 = new List<Color>();
+                        OkunanRenk = GirisResmi.GetPixel(x, y);
+                        if (x != 0 && y != 0 && x != ResimGenisligi - 1 && y != ResimYuksekligi - 1)
+                        {
+                            for (i = -1; i <= 1; i++)
+                            {
+                                for (j = -1; j <= 1; j++)
+                                {
+                                    if (i == 0 && j == 0) continue;
+                                    else renkler9.Add(GirisResmi.GetPixel(x + i, y + j));
+                                }
+                            }
+                            foreach (Color renk in renkler9)
+                            {
+                                tr += renk.R;
+                                tg += renk.G;
+                                tb += renk.B;
+                            }
+
+                            r = (int)(tr / 8.0);
+                            g = (int)(tg / 8.0);
+                            b = (int)(tb / 8.0);
+                        }
+
+                        double toplam = 0.0;
+
+                        toplam += SS(r, GirisResmi.GetPixel(x, y).R);
+                        toplam += SS(g, GirisResmi.GetPixel(x, y).G);
+                        toplam += SS(b, GirisResmi.GetPixel(x, y).B);
+
+                        if (toplam < 10)
+                        {
+                            r = OkunanRenk.R;
+                            g = OkunanRenk.G;
+                            b = OkunanRenk.B;
+                        }
+                    }
+                    else
+                    {
+                        OkunanRenk = GirisResmi.GetPixel(x, y);
+                        if (x != 0 && y != 0 && x != ResimGenisligi - 1 && y != ResimYuksekligi - 1)
+                        {
+                            renkler5[0] = GirisResmi.GetPixel(x - 1, y);
+                            renkler5[1] = GirisResmi.GetPixel(x, y - 1);
+                            renkler5[2] = GirisResmi.GetPixel(x, y + 1);
+                            renkler5[3] = GirisResmi.GetPixel(x + 1, y);
+
+                            foreach (Color renk in renkler5)
+                            {
+                                tr += renk.R;
+                                tg += renk.G;
+                                tb += renk.B;
+                            }
+
+                            r = (int)(tr / 4.0);
+                            g = (int)(tg / 4.0);
+                            b = (int)(tb / 4.0);
+
+                            double toplam = 0.0;
+                            toplam += SS(r, GirisResmi.GetPixel(x, y).R);
+                            toplam += SS(g, GirisResmi.GetPixel(x, y).G);
+                            toplam += SS(b, GirisResmi.GetPixel(x, y).B);
+
+                            if (toplam < esik)
+                            {
+                                r = OkunanRenk.R;
+                                g = OkunanRenk.G;
+                                b = OkunanRenk.B;
+                            }
+                        }
+                    }
+                    CikisResmi.SetPixel(x, y, Color.FromArgb(r, g, b));
+                }
+            }
+
+            return CikisResmi;
+        }
+
+        private double SS(int a, int b)
+        {
+            double ort = (a + b) / 2.0;
+
+            return Math.Sqrt((a - ort) * (a - ort) + (b - ort) * (b - ort));
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Bitmap resim = new Bitmap(pictureBox1.Image);
+            pictureBox2.Image = NoisyYokEt(resim, false);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.para2;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Bitmap resim = new Bitmap(pictureBox1.Image);
+            int esik = 250;
+            Bitmap genislemisResim = GenisletmeSinir(resim, esik);
+            esik = 10;
+            int k;
+            Bitmap bolgeResim;
+            (bolgeResim, k) = BolgeBul(genislemisResim, esik);
+
+            int kurus25, kurus50, lira1;
+            (kurus25, kurus50, lira1) = ParaSayisiBul(bolgeResim);
+
+            double Toplam = kurus25 * 0.25 + kurus50 * 0.5 + lira1;
+
+            textBox5.Text = kurus25.ToString();
+            textBox6.Text = kurus50.ToString();
+            textBox7.Text = lira1.ToString();
+            textBox8.Text = Toplam.ToString() + " TL";
+            pictureBox2.Image = bolgeResim;
+        }
+
+        private (int, int, int) ParaSayisiBul(Bitmap resim)
+        {
+            int w = resim.Width;
+            int h = resim.Height;
+
+            Dictionary<Color, int> renkSayac = new Dictionary<Color, int>();
+
+            Color okunanRenk;
+
+            for (int x = 0; x < w; x++)
+            {
+                for (int y = 0; y < h; y++)
+                {
+                    okunanRenk = resim.GetPixel(x, y);
+
+                    if (!(okunanRenk.R < 20 && okunanRenk.G < 20 && okunanRenk.B < 20))
+                    {
+                        if (renkSayac.ContainsKey(okunanRenk))
+                        {
+                            renkSayac[okunanRenk]++;
+                        }
+                        else
+                        {
+                            renkSayac.Add(okunanRenk, 1);
+                        }
+                    }
+                }
+            }
+            if (StandartSapma(renkSayac.Values) < 15)
+            {
+                MessageBox.Show("Nesne Boyutları birbirine çok yakın. Hepsi ceviz veya hepsi fındık olabilir. Ya da ceviz-fındık içermeyen bir resim yüklenmiş olabilir.");
+                return (0, 0, 0);
+            }
+            else
+            {
+                int kurus25 = 0;
+                int kurus50 = 0;
+                int lira1 = 0;
+                double ort = renkSayac.Values.Average();
+
+                foreach (KeyValuePair<Color, int> kvp in renkSayac)
+                {
+                    if (kvp.Value > 200) lira1++;
+                    else if (kvp.Value > 180) kurus50++;
+                    else kurus25++;
+                }
+
+                return (kurus25, kurus50, lira1);
+            }
         }
     }
 }

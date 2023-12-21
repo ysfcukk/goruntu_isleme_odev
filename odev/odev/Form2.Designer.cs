@@ -177,10 +177,10 @@
             this.palet11 = new System.Windows.Forms.Button();
             this.palet10 = new System.Windows.Forms.Button();
             this.palet9 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.button25 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -2055,6 +2055,20 @@
             this.palet9.UseVisualStyleBackColor = false;
             this.palet9.Click += new System.EventHandler(this.palet_Click);
             // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button25.Location = new System.Drawing.Point(783, 571);
+            this.button25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(200, 49);
+            this.button25.TabIndex = 57;
+            this.button25.Text = "Varsayilan Resmi Yukle";
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -2091,20 +2105,6 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 45;
             this.pictureBox8.TabStop = false;
-            // 
-            // button25
-            // 
-            this.button25.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button25.Location = new System.Drawing.Point(783, 571);
-            this.button25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(200, 49);
-            this.button25.TabIndex = 57;
-            this.button25.Text = "Varsayilan Resmi Yukle";
-            this.button25.UseVisualStyleBackColor = false;
-            this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // pictureBox3
             // 
