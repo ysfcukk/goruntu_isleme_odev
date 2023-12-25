@@ -591,6 +591,12 @@ namespace odev
         {
             MessageBox.Show("Tüm yöntemler birbirine yakın sonuçlar verdi. Sanırım en sağlıklısı ölçeği resme göre manuel ayarlamak olacaktır.");
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            MessageBox.Show("degisti");
+        }
     }
 }
 
