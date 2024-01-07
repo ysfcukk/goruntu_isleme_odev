@@ -34,7 +34,7 @@ namespace odev
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            pictureBox1.Image = Properties.Resources.earth;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -514,18 +514,21 @@ namespace odev
 
         private void button7_Click(object sender, EventArgs e)
         {
-            resim1 = new Bitmap(pictureBox1.Image);
-            resim2 = new Bitmap(pictureBox2.Image);
+            if (pictureBox1.Image != null) resim1 = new Bitmap(pictureBox1.Image);
+            if (pictureBox2.Image != null) resim2 = new Bitmap(pictureBox2.Image);
 
             double a = trackBar3.Value / 100.0;
             double b = trackBar4.Value / 100.0;
 
-            pictureBox2.Image = PikselToplama(resim1, resim2, a, b,false);
+            if (pictureBox1.Image == null || pictureBox2.Image == null)
+                MessageBox.Show("HATA");
+            else
+                pictureBox3.Image = PikselToplama(resim1, resim2, a, b, false);
         }
 
         private void trackBar3_Scroll(object sender, EventArgs e)
         {
-            pictureBox2.Image = PikselToplama(resim1, resim2, trackBar3.Value / 100.0, trackBar4.Value / 100.0,false);
+            pictureBox3.Image = PikselToplama(resim1, resim2, trackBar3.Value / 100.0, trackBar4.Value / 100.0,false);
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -538,7 +541,7 @@ namespace odev
 
             (a,b) = OtomatikOlceklendirme(resim1, resim2);
 
-            pictureBox2.Image = PikselToplama(resim1, resim2, a, b,false);
+            pictureBox3.Image = PikselToplama(resim1, resim2, a, b,false);
         }
 
         private (double, double) OtomatikOlceklendirme(Bitmap Resim1, Bitmap Resim2)
@@ -584,7 +587,7 @@ namespace odev
             resim1 = new Bitmap(pictureBox1.Image);
             resim2 = new Bitmap(pictureBox2.Image);
 
-            pictureBox2.Image = PikselToplama(resim1, resim2, 1, 1,true);
+            pictureBox3.Image = PikselToplama(resim1, resim2, 1, 1,true);
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -595,7 +598,6 @@ namespace odev
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             timer1.Stop();
-            MessageBox.Show("degisti");
         }
     }
 }

@@ -385,5 +385,78 @@ namespace odev
 
             pictureBox3.Image = PikselToplama(resim1, resim2, a, b, false, false);
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.picture3;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Bitmap Resim1 = new Bitmap(pictureBox1.Image);
+
+            Bitmap CikisResmi;
+            int ResimGenisligi = Resim1.Width;
+            int ResimYuksekligi = Resim1.Height;
+            CikisResmi = new Bitmap(ResimGenisligi, ResimYuksekligi);
+            Color renk1, renk2;
+            int x, y;
+            int R = 0, G = 0, B = 0;
+
+            int a = Convert.ToInt16(textBox1.Text);
+
+            for (x = 0; x < ResimGenisligi; x++)
+            {
+                for (y = 0; y < ResimYuksekligi; y++)
+                {
+                    renk1 = Resim1.GetPixel(x, y);
+
+                    R = renk1.R << a;
+                    G = renk1.G << a;
+                    B = renk1.B << a;
+
+                    if (R > 255) R = 255;
+                    if (G > 255) G = 255;
+                    if (B > 255) B = 255;
+
+                    CikisResmi.SetPixel(x, y, Color.FromArgb(R, G, B));
+                }
+            }
+            pictureBox2.Image = CikisResmi;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Bitmap Resim1 = new Bitmap(pictureBox1.Image);
+
+            Bitmap CikisResmi;
+            int ResimGenisligi = Resim1.Width;
+            int ResimYuksekligi = Resim1.Height;
+            CikisResmi = new Bitmap(ResimGenisligi, ResimYuksekligi);
+            Color renk1, renk2;
+            int x, y;
+            int R = 0, G = 0, B = 0;
+
+            int a = Convert.ToInt16(textBox1.Text);
+
+            for (x = 0; x < ResimGenisligi; x++)
+            {
+                for (y = 0; y < ResimYuksekligi; y++)
+                {
+                    renk1 = Resim1.GetPixel(x, y);
+
+                    R = renk1.R >> a;
+                    G = renk1.G >> a;
+                    B = renk1.B >> a;
+
+                    if (R > 255) R = 255;
+                    if (G > 255) G = 255;
+                    if (B > 255) B = 255;
+
+                    CikisResmi.SetPixel(x, y, Color.FromArgb(R, G, B));
+                }
+            }
+            pictureBox2.Image = CikisResmi;
+        }
     }
 }

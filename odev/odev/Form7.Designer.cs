@@ -255,7 +255,7 @@
             this.button16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button16.Location = new System.Drawing.Point(208, 40);
+            this.button16.Location = new System.Drawing.Point(165, 40);
             this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(140, 39);
@@ -287,8 +287,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(333, 81);
             this.label2.TabIndex = 69;
-            this.label2.Text = "Slaytlardaki diğer algoritmalar zaten programda mevcuttur. Sadece Robert Cross ek" +
-    "lenmiştir";
+            this.label2.Text = "Slaytlardaki diğer algoritmalar zaten programda mevcuttur. Sadece Robert Cross ve" +
+    " Canny eklenmiştir";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabPage4
@@ -535,10 +535,10 @@
             this.button21.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button21.Location = new System.Drawing.Point(814, 619);
+            this.button21.Location = new System.Drawing.Point(826, 619);
             this.button21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(167, 49);
+            this.button21.Size = new System.Drawing.Size(155, 49);
             this.button21.TabIndex = 70;
             this.button21.Text = "Yeni Resim Yukle";
             this.button21.UseVisualStyleBackColor = false;

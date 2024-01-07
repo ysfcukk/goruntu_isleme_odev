@@ -268,5 +268,8 @@
   <ItemGroup>
     <None Include="Resources\cars2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earth.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

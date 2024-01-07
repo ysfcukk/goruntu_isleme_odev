@@ -447,7 +447,7 @@
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(120, 39);
             this.button17.TabIndex = 3;
-            this.button17.Text = "Gri Ornekle";
+            this.button17.Text = "Olustur";
             this.button17.UseVisualStyleBackColor = false;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
@@ -457,14 +457,14 @@
             this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "256",
-            "128",
-            "64",
-            "32",
-            "16",
-            "8",
+            "2",
             "4",
-            "2"});
+            "8",
+            "16",
+            "32",
+            "64",
+            "128",
+            "256"});
             this.comboBox3.Location = new System.Drawing.Point(21, 30);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox3.Name = "comboBox3";
@@ -488,6 +488,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Location = new System.Drawing.Point(687, 31);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
@@ -499,6 +500,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(53, 31);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";

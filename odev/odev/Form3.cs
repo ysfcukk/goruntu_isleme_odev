@@ -70,6 +70,7 @@ namespace odev
                 label2.Text = "pasif";
                 tiklayarakTasi = false;
                 basiliTuatarakTasi = true;
+                yedekResim = new Bitmap(pictureBox2.Image);
             }
             else
             {
@@ -143,7 +144,7 @@ namespace odev
 
         private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
-            if (isDragging && tiklayarakTasi)
+            if (isDragging && basiliTuatarakTasi)
             {
                 // Fare konumundaki değişimi hesaplayın
 
@@ -168,11 +169,15 @@ namespace odev
                 {
                     for (int y1 = 0; y1 < (ResimYuksekligi); y1++)
                     {
-                        OkunanRenk = GirisResmi.GetPixel(x1, y1);
-                        x2 = x1 + Tx;
-                        y2 = y1 + Ty;
-                        if (x2 > 0 && x2 < ResimGenisligi && y2 > 0 && y2 < ResimYuksekligi)
-                            CikisResmi.SetPixel((int)x2, (int)y2, OkunanRenk);
+                        OkunanRenk = Color.Transparent;
+                        if (x1 > Tx && y1 > Ty)
+                        {
+                            OkunanRenk = GirisResmi.GetPixel(x1, y1);
+                            x2 = x1 + Tx;
+                            y2 = y1 + Ty;
+                            if (x2 > 0 && x2 < ResimGenisligi && y2 > 0 && y2 < ResimYuksekligi)
+                                CikisResmi.SetPixel((int)x2, (int)y2, OkunanRenk);
+                        }
                     }
                 }
 
@@ -537,7 +542,7 @@ namespace odev
                             kirpmaIlkNokta.Y = y;
                         }
                         else
-                        {   
+                        {
                             kirpmaSonNokta.Y = y;
                             kirpmaSonNokta.X = kirpmaIlkNokta.X;
                             kirpmaIlkNokta.X = x;
@@ -1096,12 +1101,16 @@ namespace odev
                 if (x1 > x2)
                 {
                     kucukX = x2;
+                    ilkNokta.X = x2;
                     buyukX = x1;
+                    sonNokta.X = x1;
                 }
                 if (y1 > y2)
                 {
                     kucukY = y2;
+                    ilkNokta.Y = y2;
                     buyukY = y1;
+                    sonNokta.Y = y1;
                 }
 
                 pictureBox1.Image = DikdortgenCiz(resim, kucukX, kucukY, Math.Abs(x1 - x2), Math.Abs(y1 - y2));
@@ -1136,6 +1145,7 @@ namespace odev
             {
                 for (int y = 0; y < height; y++)
                 {
+
                     OkunanRenk = resim.GetPixel(x + ilkNokta.X, y + ilkNokta.Y);
 
                     cikisResmi.SetPixel(x, y, OkunanRenk);

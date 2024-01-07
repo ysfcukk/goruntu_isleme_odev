@@ -1215,5 +1215,20 @@ namespace odev
             }
             return CikisResmi;
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Properties.Resources.picture3;
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.DefaultExt = ".jpg";
+            file.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
+            file.ShowDialog();
+            pictureBox1.ImageLocation = file.FileName;
+            yedekResim = new Bitmap(pictureBox1.ImageLocation);
+        }
     }
 }

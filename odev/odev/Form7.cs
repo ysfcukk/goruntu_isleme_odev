@@ -1092,16 +1092,10 @@ namespace odev
         private void button13_Click(object sender, EventArgs e)
         {
             Bitmap resim = new Bitmap(pictureBox1.Image);
-            //pictureBox2.Image = Sobel(resim);
+            pictureBox2.Image = Sobel(resim);
 
             Bitmap image = new Bitmap(resim); // Resim dosyanızın yolunu buraya ekleyin
 
-            // Kenar açısını bulmak için Sobel operatörünü kullan
-            double angle = FindEdgeAngle(image, 128, 128); // Örnek piksel koordinatları (100, 100)
-
-            string text = "Kenar Açısı:" + angle.ToString() + "derece";
-
-            MessageBox.Show(text);
         }
 
         private Bitmap RobertCross(Bitmap GirisResmi)
@@ -1151,7 +1145,7 @@ namespace odev
 
         private void button16_Click(object sender, EventArgs e)
         {
-            string metin = "Canny algoritmasında hata aldım fakat araştırdığım kadarıyla insan fotoğraflarında güzel sonuçlar veriyor." +
+            string metin = "Canny algoritması insan fotoğraflarında güzel sonuçlar veriyor." +
                 " Bulanıklaştırma algoritması aralında en kötüsü bence. Genellikle kötü sonuçlar veriyor. Aşındırma genel olarak gayet iyi." +
                 " Sobel ve Prewit özellikle manzara resimlerinde iyi sonuç veriyor." +
                 " Robert Cross ise ızgara tarzı resimlerde çok iyi sonuç veriyor.";
@@ -1337,17 +1331,29 @@ namespace odev
             pictureBox2.Image = Compass(resim, ilkMatris, true);
         }
 
-        private double FindEdgeAngle(Bitmap image, int x, int y)
+        private double FindEdgeAngle(Bitmap image)
         {
+            double result = 0.0;
+            int sayac = 0;
             // Sobel operatörü ile kenarları bul
             int[,] sobelX = { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
             int[,] sobelY = { { -1, -2, -1 }, { 0, 0, 0 }, { 1, 2, 1 } };
 
-            int gx = Convolution(image, sobelX, x, y);
-            int gy = Convolution(image, sobelY, x, y);
+            for (int x = 0; x < image.Width; x++)
+            {
+                for (int y = 0; y < image.Height; y++)
+                {
+                    int gx = Convolution(image, sobelX, x, y);
+                    int gy = Convolution(image, sobelY, x, y);
+
+                    result += Math.Atan2(gy, gx) * (180.0 / Math.PI);
+                    sayac++;
+                }
+            }
+
+            return result / sayac;
 
             // Kenarın açısını hesapla
-            return Math.Atan2(gy, gx) * (180.0 / Math.PI);
         }
 
         private int Convolution(Bitmap image, int[,] kernel, int x, int y)
@@ -1381,6 +1387,19 @@ namespace odev
             file.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
             file.ShowDialog();
             pictureBox1.ImageLocation = file.FileName;
+        }
+
+
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            Bitmap newBitmap = (Bitmap)pictureBox1.Image;
+            Bitmap newBitmap1 = new Bitmap(newBitmap.Width, newBitmap.Height);
+            newBitmap1 = MakeGrayscale(newBitmap);
+            newBitmap1 = MakeSmooth(newBitmap1);
+            newBitmap1 = DetectEdge(newBitmap1);
+            pictureBox2.Image = newBitmap1;
+
         }
     }
 }

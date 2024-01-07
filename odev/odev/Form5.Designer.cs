@@ -86,6 +86,8 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -357,7 +359,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Pink;
-            this.label5.Location = new System.Drawing.Point(210, 70);
+            this.label5.Location = new System.Drawing.Point(223, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 16);
             this.label5.TabIndex = 64;
@@ -371,7 +373,7 @@
             this.button15.Location = new System.Drawing.Point(22, 59);
             this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(182, 39);
+            this.button15.Size = new System.Drawing.Size(195, 39);
             this.button15.TabIndex = 63;
             this.button15.Text = "Nokta Secmeyi Etkinleştir";
             this.button15.UseVisualStyleBackColor = false;
@@ -397,7 +399,7 @@
             this.button11.Location = new System.Drawing.Point(22, 100);
             this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(182, 39);
+            this.button11.Size = new System.Drawing.Size(195, 39);
             this.button11.TabIndex = 13;
             this.button11.Text = "Alanı Bulanıklaştır";
             this.button11.UseVisualStyleBackColor = false;
@@ -411,7 +413,7 @@
             this.button10.Location = new System.Drawing.Point(22, 18);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(182, 39);
+            this.button10.Size = new System.Drawing.Size(195, 39);
             this.button10.TabIndex = 12;
             this.button10.Text = "Reklamlı Resmi Getir";
             this.button10.UseVisualStyleBackColor = false;
@@ -840,12 +842,42 @@
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
+            // button19
+            // 
+            this.button19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button19.Location = new System.Drawing.Point(743, 558);
+            this.button19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(187, 49);
+            this.button19.TabIndex = 65;
+            this.button19.Text = "Varsayilan Resmi Yukle";
+            this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button20.Location = new System.Drawing.Point(743, 612);
+            this.button20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(187, 49);
+            this.button20.TabIndex = 64;
+            this.button20.Text = "Resim Yukle";
+            this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
             // hafta5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(933, 697);
+            this.Controls.Add(this.button19);
+            this.Controls.Add(this.button20);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -939,5 +971,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
     }
 }

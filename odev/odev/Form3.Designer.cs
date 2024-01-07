@@ -72,7 +72,6 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.button19 = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.button22 = new System.Windows.Forms.Button();
@@ -101,6 +100,8 @@
             this.button23 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -118,7 +119,6 @@
             this.groupBox7.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            this.tabPage8.SuspendLayout();
             this.tabPage9.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.tabPage10.SuspendLayout();
@@ -581,6 +581,7 @@
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage7.Controls.Add(this.label14);
             this.tabPage7.Controls.Add(this.groupBox8);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
@@ -598,7 +599,7 @@
             this.groupBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox8.Size = new System.Drawing.Size(368, 155);
+            this.groupBox8.Size = new System.Drawing.Size(193, 155);
             this.groupBox8.TabIndex = 65;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Odev 7";
@@ -652,26 +653,11 @@
             // tabPage8
             // 
             this.tabPage8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage8.Controls.Add(this.button19);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Size = new System.Drawing.Size(707, 230);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Odev8";
-            // 
-            // button19
-            // 
-            this.button19.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button19.Location = new System.Drawing.Point(15, 18);
-            this.button19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(106, 39);
-            this.button19.TabIndex = 23;
-            this.button19.Text = "Tutamac Ciz";
-            this.button19.UseVisualStyleBackColor = false;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // tabPage9
             // 
@@ -821,7 +807,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(259, 125);
+            this.label11.Location = new System.Drawing.Point(262, 74);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(26, 16);
             this.label11.TabIndex = 26;
@@ -829,7 +815,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(238, 144);
+            this.textBox7.Location = new System.Drawing.Point(241, 93);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(70, 22);
             this.textBox7.TabIndex = 25;
@@ -840,7 +826,7 @@
             this.button27.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button27.Location = new System.Drawing.Point(26, 127);
+            this.button27.Location = new System.Drawing.Point(29, 76);
             this.button27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(206, 39);
@@ -854,7 +840,7 @@
             this.button26.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button26.Location = new System.Drawing.Point(26, 82);
+            this.button26.Location = new System.Drawing.Point(29, 31);
             this.button26.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(100, 40);
@@ -868,7 +854,7 @@
             this.button25.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button25.Location = new System.Drawing.Point(132, 82);
+            this.button25.Location = new System.Drawing.Point(135, 31);
             this.button25.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(100, 40);
@@ -889,6 +875,7 @@
             // tabPage13
             // 
             this.tabPage13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage13.Controls.Add(this.label15);
             this.tabPage13.Controls.Add(this.groupBox10);
             this.tabPage13.Location = new System.Drawing.Point(4, 25);
             this.tabPage13.Name = "tabPage13";
@@ -1018,6 +1005,25 @@
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.Location = new System.Drawing.Point(348, 68);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(356, 84);
+            this.label14.TabIndex = 66;
+            this.label14.Text = "Etklineştir butonuna tıkladıktan sonra PictureBox1 üzerinde bir noktaya tıklayını" +
+    "z.";
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label15.Location = new System.Drawing.Point(468, 54);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(236, 84);
+            this.label15.TabIndex = 67;
+            this.label15.Text = "Kırpmak için sol üstten sağ alta doğru seçiniz";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1090,7 +1096,6 @@
             this.tabPage7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            this.tabPage8.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.tabPage10.ResumeLayout(false);
@@ -1161,7 +1166,6 @@
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button19;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button button21;
@@ -1183,5 +1187,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
